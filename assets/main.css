@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #EAFAFE 50%, #518FF8 50%);
+}
+
+
+nav {
+    background-color: #fff;
+    padding: 20px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 1s linear;
+    overflow-x: hidden;
+    border-radius: 4px;
+    box-shadow: 2px 2px  black;
+}
+
+nav.active {
+    width: 300px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    width: 0;
+    transition: width 1s linear;
+}
+
+nav.active ul {
+    width: 100%;
+}
+
+nav ul li {
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 1s linear, opacity 1s linear;
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+nav ul a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.icon {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+
+.icon .line {
+    background-color: #5290f9;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 1s linear;
+}
+
+.icon .line1 {
+    top: 13px;
+}
+
+.icon .line2 {
+    top: 18px;
+    background-color: red;
+}
+
+nav.active .icon .line2 {
+    transform: rotate(-405deg) translateY(-4px) ;
+}
+
+nav.active .icon .line1 {
+    transform: rotate(405deg) translateY(4px) ;
+} 
